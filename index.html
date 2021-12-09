@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cook Buddy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav>
+      <p class="alert"></p>
+      <a id="fav-btn" href="./favourites.html"
+        >My Favourites<i class="fas fa-heart"></i
+      ></a>
+    </nav>
+      <img src="Logo.png" style="width:270px;height:210px;" >
+    <header>
+      <h2>What do you feel like cooking today?</h2>
+      <span>Type an ingredient below to search for recipes</span>
+        
+        <form id="form" class="example" style="margin:auto"; max-width:600px>
+        <input id="search" class="search" type="text" placeholder="Search Recipes">
+        <button type="submit" class = "but1"><i class="fa fa-search"></i></button>
+        </form>
+    </header>
+    <span>
+      <div class="container">
+        <div class="todoBlock">
+          <!-- main title holder -->
+          <div class="titleHolder">
+            <h1>My Refrigerator</h1>
+          </div>
+          <!-- todo list -->
+          <div class="todoList">
+            <!-- list holder -->
+            <div class="listHolder">
+              <ul class="list">
+      
+              </ul>
+            </div>
+            <!-- form holder -->
+            <div class="formHolder">
+              <div class="col big">
+                <input type="text" id="addInput" placeholder="Add Item">
+              </div>
+              <div class="col">
+                <button type="button" id="addBtn" class="btn-primary"><i class="fa fa-plus"></i></button>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </span>
+    <main id="main"></main>
+
+    <script type="module" src="./src/script.mjs"></script>
+    <script type="module" src="./src/constants.mjs"></script>
+  </body>
+</html>

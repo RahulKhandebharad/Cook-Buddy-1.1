@@ -1,0 +1,466 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(240, 230, 140, 0.699);
+  font-family: Poppins, sans-serif;
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: 	white;
+  background-color: #FF9999;
+  padding: 10px;
+  margin: 10px 20px 0 0;
+  border-radius: 100px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+img {
+  border: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+}
+
+a:focus {
+  outline: 0;
+}
+
+a:active {
+  transform: scale(0.98);
+}
+
+.fa-heart {
+  margin-left: 5px;
+}
+
+.alert {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 10px;
+  width: auto;
+  padding: 5px 40px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  transform: translateX(-115%);
+  transition: transform 0.5s ease;
+}
+
+.alert-success {
+  transform: translateX(0);
+  background-color: yellow;
+}
+
+.alert-danger {
+  transform: translateX(110%);
+  background-color: orangered;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0px;
+  text-align: center;
+}
+
+header span {
+  margin-bottom: 20px;
+}
+/*
+.search {
+  background-color: rgb(245, 248, 240);
+  border: 2px;
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  color: gray;
+  width: 300px;
+    flex-grow: 2;
+}
+
+.search:focus {
+  outline: none;
+}*/
+form.example input[type=text] {
+  padding: 20px;
+  font-size: 17px;
+  /* border: 1px solid grey; */
+  border-radius: 100px;
+  float: left;
+  width: 80%;
+  background: white;
+    flex-grow: 2;
+}
+
+form.example button {
+  margin-left: 20px;
+  float: left;
+  width: 20%;
+  padding: 0px;
+  background: #FFAFAF;
+  color: white;
+  font-size: 17px;
+  border: 0px solid grey;
+  border-radius: 100px;
+  cursor: pointer;
+}
+.example {
+  display: flex;
+  flex-direction: row;
+}
+
+form.example button:hover {
+  background: #FF9999;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  /* width: 500px; */
+}
+
+@media (max-width: 500px) {
+  /* .container {
+     width: 100vw; 
+  } */
+}
+
+/* Changing size with flex property looks neater but the cards won't wrap on smaller screens, so used width prop instead */
+.recipe-card {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: nowrap; */
+  width: 25rem;
+  height: auto;
+  /* word-break: break-all; */
+  text-align: justify;
+  margin: 20px;
+  cursor: pointer;
+  /* transition: flex 0.7s ease-in; */
+  background-color: #FBFFE2;
+  border: 0px solid coral;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.recipe-card img {
+  width: 100%;
+  /* height: 320px; */
+  max-height: 50%;
+  object-fit: cover;
+}
+
+.recipe-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 5px 10px;
+  margin: 5px 0;
+  letter-spacing: 1.8px;
+}
+
+.save-btn {
+  position: absolute;
+  /* top: 0; */
+  left: 90%;
+  background-color: #FFAFAF;
+  color: orangered;
+  border: 1px solid transparent;
+  font-size: 26px;
+  cursor: pointer;
+  transform: translateY(100%);
+  transform: translateX(48%);
+  border-bottom-left-radius: 5px;
+  z-index: 100;
+  transition: background-color 0.3s ease-out;
+}
+
+.save-btn:hover {
+  background-color: #f1c572b0;
+}
+
+.recipe-text {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+
+.recipe-card.active {
+  width: 70vw;
+  height: 100vh;
+  /* height: 25rem; */
+  cursor: auto;
+  overflow-y: scroll;
+}
+
+.recipe-card.active .save-btn {
+  left: 94.5%;
+  transform: translateX(100%);
+}
+
+.recipe-card.active .recipe-text {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  /* max-height: 700px; */
+  /* overflow-y: scroll; */
+}
+
+.recipe-card::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #f5f5f5;
+}
+
+.recipe-card::-webkit-scrollbar {
+  width: 8px;
+  background-color: #f5f5f5;
+}
+
+.recipe-card::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 127, 80, 0.596);
+}
+
+.recipe-info,
+.ingredients,
+.recipe-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.recipe-info p {
+  margin: 5px;
+  font-size: 14px;
+}
+
+i {
+  padding-right: 7px;
+}
+
+.ingredients h4,
+.ingredients p,
+.recipe-instructions h4,
+.recipe-instructions p {
+  margin: 2px;
+}
+
+.ingredients p,
+.recipe-instructions p,
+.recipe-instructions ol li {
+  font-size: 15px;
+}
+
+.ingredients p {
+  text-align: center;
+}
+
+.not-found {
+  font-size: 20px;
+  font-style: italic;
+  color: rgb(165, 70, 36);
+}
+
+@media (max-width: 900px) {
+  .recipe-card.active {
+    width: 100vw;
+  }
+
+  .recipe-card.active .save-btn {
+    left: 87%;
+    /* transform: translateX(100%); */
+  }
+
+  .recipe-card::-webkit-scrollbar {
+    width: 15px;
+  }
+}
+/* 
+general 
+-------
+*/
+body {
+  font: 300 16px/1.5;
+  font-family: Poppins, sans-serif;
+  color: #333;
+  background: #FFEBCC;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 0 15px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 300;
+}
+
+p {
+  margin: 0 0 15px;
+}
+
+input[type="text"] {
+  width: 100%;
+  border-radius: 100px;
+  height: 40px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 10px;
+  font: 300 16px/1.5 "Roboto", sans-serif;
+  transition: border 0.3s linear;
+}
+
+input[type="text"]:focus {
+  border-color: #4ac7be;
+  outline: none;
+}
+
+.btn-primary {
+  background: #4ac7be;
+  border-radius: 100px;
+  border: none;
+  padding: 10px;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+  cursor: pointer;
+  font: 300 16px/1.5 "Roboto", sans-serif;
+  transition: background 0.3s linear;
+}
+
+.btn-primary:hover {
+  background: #097fb7;
+}
+
+.btn-primary:focus {
+  outline: none;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  display: inline-block;
+  vertical-align: top;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.3s linear, color 0.3s linear;
+}
+
+.btn-icon:focus {
+  outline: none;
+}
+
+.btn-icon:before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.btn-icon.remove:before {
+  content: "\f2ed";
+}
+
+.btn-icon.down:before {
+  content: "\f063";
+}
+
+.btn-icon.up:before {
+  content: "\f062";
+}
+
+/* 
+todo block 
+----------
+*/
+.todoBlock {
+  padding: 50px;
+  margin: 20px 0;
+  border-radius: 20px;
+  background: #FBFFE2;
+  box-shadow: 5px 5px 20px -5px rgba(0, 0, 0, 0.2);
+}
+
+.todoBlock .titleHolder {
+text-align: center;
+  margin: 0 0 30px;
+}
+
+/* 
+list holder
+-----------
+*/
+.listHolder li {
+  counter-increment: step-counter;
+  overflow: hidden;
+  padding: 0 0 20px 30px;
+  position: relative;
+}
+
+.listHolder li:before {
+  content: counter(step-counter);
+  background: #4ac7be;
+  color: #fff;
+  font-size: 14px;
+  padding: 0px 6px;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.listHolder .listName {
+  float: left;
+}
+
+.listHolder .btn-icon {
+  float: right;
+  margin: 0 0 0 20px;
+}
+
+/* 
+form holder
+-----------
+*/
+.formHolder {
+  margin: 0 -5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.formHolder .col {
+  float: left;
+  width: 20%;
+  padding: 0 5px;
+}
+
+.formHolder .col.big {
+  width: 80%;
+  
+}
